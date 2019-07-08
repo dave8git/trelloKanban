@@ -49,18 +49,20 @@
         }
     };
 
-    function Card(description) {
+    function Card(description, borderColor) {
         var self = this;
 
         this.id = randomString();
         this.description = description;
+        this.borderColor = borderColor;
         this.element = generateTemplate('card-template', {
-            description: this.description
+            description: this.description,
+            borderColor: this.borderColor
         }, 'li');
 
         this.element.querySelector('.card').addEventListener('click', function (event) {
             event.stopPropagation();
-
+            this.element.querySelector('.card').classList.add('borderColor');
             if (event.target.classList.contains('btn-delete')) {
                 self.removeCard();
             }
@@ -103,8 +105,8 @@
     board.addColumn(doneColumn);
 
     // CREATING CARDS
-    var card1 = new Card('New task');
-    var card2 = new Card('Create kanban boards');
+    var card1 = new Card('New task', 'cardBorderBlue');
+    var card2 = new Card('Create kanban boards', 'cardBorderGreen');
 
     // ADDING CARDS TO COLUMNS
     todoColumn.addCard(card1);
