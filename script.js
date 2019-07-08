@@ -1,4 +1,4 @@
-document.addEventListener('DOMContentLoaded', function () {
+//document.addEventListener('DOMContentLoaded', function () {
     function randomString() {
         var chars = '0123456789abcdefghiklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXTZ';
         var str = '';
@@ -18,14 +18,16 @@ document.addEventListener('DOMContentLoaded', function () {
         return element;
     }
 
-    function Column(name) {
+    function Column(name, btnClass) {
         var self = this;
-
+        
         this.id = randomString();
         this.name = name;
+        this.btnClass = btnClass; 
         this.element = generateTemplate('column-template', {
         name: this.name,
-        id: this.id
+        id: this.id, 
+        btnClass: this.btnClass
         });
 
         this.element.querySelector('.column').addEventListener('click', function (event) {
@@ -91,9 +93,9 @@ document.addEventListener('DOMContentLoaded', function () {
         board.addColumn(column);
     });
     // CREATING COLUMNS
-    var todoColumn = new Column('To do');
-    var doingColumn = new Column('Doing');
-    var doneColumn = new Column('Done');
+    var todoColumn = new Column('To do', 'btnToDoColor');
+    var doingColumn = new Column('Doing', 'btnDoingColor');
+    var doneColumn = new Column('Done', 'btnDoneColor');
 
     // ADDING COLUMNS TO THE BOARD
     board.addColumn(todoColumn);
@@ -108,4 +110,4 @@ document.addEventListener('DOMContentLoaded', function () {
     todoColumn.addCard(card1);
     doingColumn.addCard(card2);
 
-});
+//});
