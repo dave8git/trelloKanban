@@ -1,0 +1,13 @@
+.column-container {
+    display: flex;
+    border: 2px black solid; 
+    justify-content: center;
+}
+
+.column {
+    border: 2px green dashed; 
+    padding: 25px;
+    margin: 40px; 
+    min-width: 250px;
+    max-width: 450px;
+}
