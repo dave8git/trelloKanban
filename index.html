@@ -5,6 +5,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Kanban board</title>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
     <link rel="stylesheet" href="style.css">
 </head>
 
@@ -19,14 +20,14 @@
         <div class="column">
         <h2 class="column-title">{{ name }}</h2>
         <ul id={{ id }} class="column-card-list"></ul>
-        <button class="btn-delete">X</button>
+        <i class="btn-delete far fa-window-close"></i>
         <button class="add-card {{ btnClass }}">Add a card</button>
     </div>
 </script>
     <script id="card-template" type="x-tmpl-mustache">
-        <div class="card {{ borderColor }}">
+        <div class="card">
       <p class="card-description">{{ description }}</p>
-      <button class="btn-delete">x</button>
+      <i class="btn-delete far fa-window-close"></i>
     </div
   </script>
 
