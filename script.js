@@ -62,7 +62,7 @@
 
         this.element.querySelector('.card').addEventListener('click', function (event) {
             event.stopPropagation();
-            this.element.querySelector('.card').classList.add('borderColor');
+        
             if (event.target.classList.contains('btn-delete')) {
                 self.removeCard();
             }
